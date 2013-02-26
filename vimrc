@@ -94,6 +94,8 @@ function! TestCmd()
     let l:file = expand("%")
     if (match(l:file, ".feature$") != -1)
         return "cucumber ".l:file
+    elseif (match(l:file, ".py$") != -1)
+        return "nosetests ".l:file
     elseif (match(l:file, "_spec") != -1)
         return "rspec ".l:file
     else
