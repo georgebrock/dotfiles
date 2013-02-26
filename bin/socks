@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# The name of the wireless network has changed between versions of OS X, so we
+# need to find the right name:
+service=`networksetup -listallnetworkservices | grep -Ei 'wi-fi|airport'`
+
+sudo networksetup -setsocksfirewallproxy $service localhost 9000
+sudo networksetup -setsocksfirewallproxystate $service on
+
+echo 'Connecting to proxy.'
+echo 'Press ctrl+c when you are done.'
+
+ssh -ND 9000 pingu.georgebrock.com
+
+echo 'Disconnecting.'
+
+sudo networksetup -setsocksfirewallproxystate $service off

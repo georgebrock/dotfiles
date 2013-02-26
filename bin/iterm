@@ -1,0 +1,12 @@
+#!/usr/bin/env osascript
+
+on run argv
+  tell application "iTerm"
+    tell the first terminal
+      set last_session to count of session
+      tell session last_session
+        write text argv as string
+      end tell
+    end tell
+  end
+end run
