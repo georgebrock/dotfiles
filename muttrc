@@ -8,6 +8,7 @@ set realname = "George Brocklehurst"
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set imap_check_subscribed
+set imap_idle
 set hostname = gmail.com
 set mail_check = 120
 set timeout = 300
