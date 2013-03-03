@@ -67,7 +67,7 @@ Bundle 'scrooloose/syntastic'
 
 map <leader>t :call ExecuteInITerm("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInITerm("clear; ".TestCmd().":".line("."))<CR>
-map <leader>r :call ExecuteInITerm("clear; rake")<CR>
+map <leader>r :call ExecuteInITerm("clear; ".AllTestsCmd())<CR>
 map <leader><leader> :call RepeatInITerm()<CR>
 map <leader>ct :silent !ctags -R .<CR>:redraw!<CR>
 map <leader>/ :nohlsearch<CR>
@@ -93,12 +93,20 @@ endfunction
 function! TestCmd()
     let l:file = expand("%")
     if (match(l:file, ".feature$") != -1)
-        return "cucumber ".l:file
+        return SpringCmd("spring cucumber", "cucumber")." ".l:file
+    elseif (match(l:file, "_spec.rb$") != -1)
+        return SpringCmd("spring rspec", "rspec")." ".l:file
+    elseif (match(l:file, ".rb$") != -1)
+        return SpringCmd("spring test", "ruby -Itest")." ".l:file
     elseif (match(l:file, ".py$") != -1)
         return "nosetests ".l:file
-    elseif (match(l:file, "_spec") != -1)
-        return "rspec ".l:file
-    else
-        return "$(if [[ -z `which spring` ]]; then echo \"ruby -Itest\"; else echo \"spring test\"; fi) ".l:file
     endif
+endfunction
+
+function! AllTestsCmd()
+    return SpringCmd("spring rake", "rake")
+endfunction
+
+function! SpringCmd(spring_version, default_version)
+    return "$(if [[ -z `which spring` ]]; then echo \"".a:default_version."\"; else echo \"".a:spring_version."\"; fi)"
 endfunction
