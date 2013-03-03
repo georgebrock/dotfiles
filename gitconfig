@@ -1,0 +1,45 @@
+[user]
+  name = George Brocklehurst
+  email = george.brocklehurst@gmail.com
+[core]
+  excludesfile = /Users/georgebrocklehurst/.gitignore
+  editor = /usr/bin/vim
+[push]
+  default = current
+
+[color]
+  ui = auto
+
+[alias]
+  c-p = cherry-pick
+  graph = log --all --graph --decorate --oneline -n30
+  rgrep = !git grep
+
+  # Current branch:
+  cb = !git branch | grep ^* | cut -d' ' -f2
+
+  # Remote tracked branch:
+  rb = !git for-each-ref --format='%(upstream:short)' \
+       "refs/heads/$(git cb)"
+
+  # New version of sb. All remotes:
+  sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | \
+       xargs git show-branch $(git cb)
+[mergetool "mvimdiff"]
+  cmd = /usr/local/bin/mvimdiff -f $LOCAL $MERGED $REMOTE
+[merge]
+  tool = vimdiff
+[difftool "gvimdiff"]
+  path = /usr/local/bin/mvimdiff
+[diff]
+  tool = vimdiff
+  guitool = vimdiff
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+  keepBackup = false
+[blame]
+  date = short
+[help]
+  autocorrect = 1
