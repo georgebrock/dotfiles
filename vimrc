@@ -33,6 +33,7 @@ if has("autocmd")
   autocmd Filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype make setlocal noexpandtab
 
   autocmd Filetype markdown setlocal spell textwidth=80
