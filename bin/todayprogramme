@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import json
+import os
+import time
+import urllib
+import webbrowser
+
+LIVE_URL = "http://www.bbc.co.uk/iplayer/radio/bbc_radio_fourfm/listenlive"
+IPLAYER_URL = "http://www.bbc.co.uk/i/%s?t=0m1s"
+EPISODES_URL = "http://www.bbc.co.uk/programmes/b006qj9z/episodes/player.json"
+
+
+def today_is_on_now():
+    os.environ["TZ"] = "Europe/London"
+    time.tzset()
+    now = time.localtime()
+    return 6 <= now.tm_hour < 9 or (now.tm_hour == 5 and now.tm_minute > 50)
+
+
+def latest_episode_id():
+    episodes = json.load(urllib.urlopen(EPISODES_URL))
+    return episodes["episodes"][0]["programme"]["pid"]
+
+
+if __name__ == "__main__":
+    if today_is_on_now():
+        url = LIVE_URL
+    else:
+        url = IPLAYER_URL % latest_episode_id()
+    webbrowser.open(url)
