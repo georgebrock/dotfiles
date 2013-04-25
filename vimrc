@@ -72,6 +72,7 @@ Bundle 'edsono/vim-matchit'
 map <leader>t :call ExecuteInITerm("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInITerm("clear; ".TestCmd().":".line("."))<CR>
 map <leader>r :call ExecuteInITerm("clear; ".AllTestsCmd())<CR>
+map <leader>M :call ExecuteInITerm("clear; make")<CR>
 map <leader><leader> :call RepeatInITerm()<CR>
 map <leader>ct :silent !ctags -R .<CR>:redraw!<CR>
 map <leader>/ :nohlsearch<CR>
