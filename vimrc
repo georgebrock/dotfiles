@@ -9,8 +9,8 @@ set expandtab  " Use spaces, not tabs
 set tabstop=4 softtabstop=4 shiftwidth=4  " Default tab size
 set showcmd  " Show the current command in the footer
 set ruler  " Show line and col numbers in footer
-set modeline
-set ls=2
+set modeline  " Read modelines from files
+set ls=2  " Show status line (filename, etc.) always in all windows
 set ai  " Auto-indent!
 set number  " Show line numbers
 set hlsearch  " Highlight the current search term
