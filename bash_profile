@@ -1,4 +1,4 @@
-export PATH=~/bin:/usr/local/bin:/opt/local/bin:/usr/local/heroku/bin:~/code/git-browse/bin:$PATH
+export PATH=~/bin:/usr/local/bin:/opt/local/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:~/code/git-browse/bin:$PATH
 
 source ~/bin/git-completion.sh
 export PS1="\[\033[00;36m\]\w\[\033[31m\]\$(__git_ps1 ' %s') > \[\033[0m\]"
