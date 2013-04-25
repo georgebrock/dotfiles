@@ -68,7 +68,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'edsono/vim-matchit'
-Bundle 'scrooloose/syntastic'
 
 map <leader>t :call ExecuteInITerm("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInITerm("clear; ".TestCmd().":".line("."))<CR>
