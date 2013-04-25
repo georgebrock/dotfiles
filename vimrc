@@ -44,7 +44,6 @@ endif
 
 map! 3 #
 map! - –
-map! ; …
 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
