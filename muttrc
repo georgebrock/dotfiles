@@ -1,23 +1,84 @@
-set imap_user = "george.brocklehurst@gmail.com"
-set imap_pass = "`1pass 'Google: george.brocklehurst@gmail.com'`"
-set smtp_url = "smtp://george.brocklehurst@smtp.gmail.com:587/"
-set smtp_pass = $imap_pass
-set from = "george.brocklehurst@gmail.com"
-set realname = "George Brocklehurst"
+set folder = ~/.mail
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set tmpdir = ~/.mutt/temp
+set signature = ~/.mutt/sig
 
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set imap_check_subscribed
-set imap_idle
-set hostname = gmail.com
-set mail_check = 120
-set timeout = 300
-set imap_keepalive = 300
-set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
-set sort = "threads"
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set pipe_decode
+set thorough_search
+
+set status_chars = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+ignore *
+unignore subject: from: date: to: cc:
+unhdr_order *
+hdr_order subject: from: date: to: cc:
+
+set spoolfile = "+george.brocklehurst-gmail.com/INBOX"
+set mbox = "+george.brocklehurst-gmail.com/archive"
+set postponed = "+george.brocklehurst-gmail.com/drafts"
+alternates george@thoughtbot\.com george@choosyosx\.com george@iconicosx\.com [^@]+@georgebrock\.com
+
+set date_format = "%Y-%m-%d"
+set index_format = "%4C %Z   %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+
+macro index gi "<change-folder>=george.brocklehurst-gmail.com/INBOX<enter>" "go to the INBOX"
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail using notmuch"
+bind index gg first-entry
+bind pager gg top
+bind index G last-entry
+bind pager G bottom
+bind index \Cf next-page
+bind index \Cb previous-page
+bind pager \Cf next-page
+bind pager \Cb previous-page
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap for the inbox"
+macro index O "<shell-escape>offlineimap -q<enter>" "run offlineimap for all folders"
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+set pager_index_lines = 10
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+alternative_order text/plain text/enriched text/html
+auto_view text/html
+
+set realname = "George Brocklehurst"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set forward_decode
+set reply_to
+set reverse_name
+set include
+set forward_quote
+
+set from = "george.brocklehurst@gmail.com"
+set sendmail = "/usr/local/bin/msmtp -a gmail"
+set sendmail_wait = 0
+unset record
+
+set query_command = "contacts -Sf '%n <%e>' '%s' | grep -v '<>'"
 
 source ~/.mutt/config/mutt-colors-solarized-dark-256.muttrc

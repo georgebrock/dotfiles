@@ -1,0 +1,25 @@
+[general]
+ui = ttyui
+accounts = Gmail
+pythonfile = ~/.offlineimap/config.py
+fsync = False
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/.mail/george.brocklehurst-gmail.com
+nametrans = local_folder_to_gmail_folder
+
+[Repository Gmail-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = george.brocklehurst@gmail.com
+remotepasseval = get_password("Google: george.brocklehurst@gmail.com")
+realdelete = no
+nametrans = gmail_folder_to_local_folder
+folderfilter = should_include_folder
