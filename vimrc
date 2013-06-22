@@ -12,10 +12,11 @@ set ruler  " Show line and col numbers in footer
 set modeline  " Read modelines from files
 set ls=2  " Show status line (filename, etc.) always in all windows
 set ai  " Auto-indent!
-set number  " Show line numbers
+set relativenumber  " Show line numbers
 set hlsearch  " Highlight the current search term
 set incsearch  " Incremental searching
 set colorcolumn=80
+set cursorline " Highlight the line the cursor is on
 set wildmode=longest,list
 
 set wildignore+=*.pyc
@@ -68,6 +69,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'edsono/vim-matchit'
+Bundle 'git@github.com:thoughtbot/vim-magictags.git'
 
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInShell("clear; ".TestCmd().":".line("."))<CR>
@@ -77,6 +79,7 @@ map <leader><leader> :call RepeatInShell()<CR>
 map <leader>ct :silent !ctags -R .<CR>:redraw!<CR>
 map <leader>/ :nohlsearch<CR>
 map <leader>m :silent !open -a Marked %<CR>:redraw!<CR>
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 command! -nargs=+ Shell :call ExecuteInShell(<q-args>)
 command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
