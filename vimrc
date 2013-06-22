@@ -69,29 +69,29 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'edsono/vim-matchit'
 
-map <leader>t :call ExecuteInITerm("clear; ".TestCmd())<CR>
-map <leader>T :call ExecuteInITerm("clear; ".TestCmd().":".line("."))<CR>
-map <leader>r :call ExecuteInITerm("clear; ".AllTestsCmd())<CR>
-map <leader>M :call ExecuteInITerm("clear; make")<CR>
-map <leader><leader> :call RepeatInITerm()<CR>
+map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
+map <leader>T :call ExecuteInShell("clear; ".TestCmd().":".line("."))<CR>
+map <leader>r :call ExecuteInShell("clear; ".AllTestsCmd())<CR>
+map <leader>M :call ExecuteInShell("clear; make")<CR>
+map <leader><leader> :call RepeatInShell()<CR>
 map <leader>ct :silent !ctags -R .<CR>:redraw!<CR>
 map <leader>/ :nohlsearch<CR>
 map <leader>m :silent !open -a Marked %<CR>:redraw!<CR>
 
-command! -nargs=+ ITerm :call ExecuteInITerm(<q-args>)
-command! -nargs=+ Rake :call ExecuteInITerm("rake ".<q-args>)
+command! -nargs=+ Shell :call ExecuteInShell(<q-args>)
+command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
 
-function! ExecuteInITerm(cmd)
-    let t:last_iterm_cmd = a:cmd
-    execute(":silent !iterm '".a:cmd."'")
+function! ExecuteInShell(cmd)
+    let t:last_shell_cmd = a:cmd
+    execute(":silent !tmuxsend '".a:cmd."'")
     redraw!
 endfunction
 
-function! RepeatInITerm()
-    if (exists("t:last_iterm_cmd"))
-        call ExecuteInITerm(t:last_iterm_cmd)
+function! RepeatInShell()
+    if (exists("t:last_shell_cmd"))
+        call ExecuteInShell(t:last_shell_cmd)
     else
-        echo "ExecuteInITerm hasn't been called yet, can't repeat it"
+        echo "ExecuteInShell hasn't been called yet, can't repeat it"
     endif
 endfunction
 

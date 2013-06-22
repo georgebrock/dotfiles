@@ -1,0 +1,1 @@
+tmux send-keys -t 0 "$@" C-m
