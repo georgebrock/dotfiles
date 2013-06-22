@@ -15,7 +15,7 @@ def today_is_on_now():
     os.environ["TZ"] = "Europe/London"
     time.tzset()
     now = time.localtime()
-    return 6 <= now.tm_hour < 9 or (now.tm_hour == 5 and now.tm_minute > 50)
+    return 6 <= now.tm_hour < 9 or (now.tm_hour == 5 and now.tm_min > 50)
 
 
 def latest_episode_id():
