@@ -1,0 +1,5 @@
+*.swp
+.DS_Store
+._*
+tags
+*.pyc
