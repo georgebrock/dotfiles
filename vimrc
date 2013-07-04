@@ -44,6 +44,7 @@ if has("autocmd")
 endif
 
 map! 3 #
+nmap r3 r#
 map! - –
 
 nnoremap <Left> :echoe "Use h"<CR>
