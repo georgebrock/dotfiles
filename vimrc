@@ -39,8 +39,8 @@ if has("autocmd")
   autocmd Filetype make setlocal noexpandtab
 
   autocmd Filetype markdown setlocal spell textwidth=80
-  autocmd Filetype gitcommit setlocal spell textwidth=80
-  autocmd Filetype mail setlocal spell textwidth=80
+  autocmd Filetype gitcommit setlocal spell textwidth=76 colorcolumn=77
+  autocmd Filetype mail setlocal spell textwidth=76 colorcolumn=77
 endif
 
 map! 3 #
