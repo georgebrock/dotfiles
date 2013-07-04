@@ -81,6 +81,7 @@ map <leader>ct :silent !ctags -R .<CR>:redraw!<CR>
 map <leader>/ :nohlsearch<CR>
 map <leader>m :silent !open -a Marked %<CR>:redraw!<CR>
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>b :call ToggleBackground()<CR>
 
 command! -nargs=+ Shell :call ExecuteInShell(<q-args>)
 command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
@@ -118,4 +119,12 @@ endfunction
 
 function! SpringCmd(spring_version, default_version)
     return "$(if [[ -z `which spring` ]]; then echo \"".a:default_version."\"; else echo \"".a:spring_version."\"; fi)"
+endfunction
+
+function! ToggleBackground()
+    if &background == "light"
+        set background=dark
+    else
+        set background=light
+    endif
 endfunction
