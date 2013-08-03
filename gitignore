@@ -3,3 +3,5 @@
 ._*
 tags
 *.pyc
+bin/stubs
+.bundle
