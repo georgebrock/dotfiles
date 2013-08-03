@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = Gmail
+accounts = Gmail, thoughtbot
 pythonfile = ~/.offlineimap/config.py
 fsync = False
 
@@ -8,7 +8,6 @@ fsync = False
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
 status_backend = sqlite
-postsynchook = notmuch new
 
 [Repository Gmail-Local]
 type = Maildir
@@ -20,6 +19,26 @@ maxconnections = 1
 type = Gmail
 remoteuser = george.brocklehurst@gmail.com
 remotepasseval = get_password("Google: george.brocklehurst@gmail.com")
+realdelete = no
+nametrans = gmail_folder_to_local_folder
+folderfilter = should_include_folder
+
+[Account thoughtbot]
+localrepository = thoughtbot-local
+remoterepository = thoughtbot-remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository thoughtbot-local]
+type = Maildir
+localfolders = ~/.mail/thoughtbot
+nametrans = local_folder_to_gmail_folder
+
+[Repository thoughtbot-remote]
+maxconnections = 1
+type = Gmail
+remoteuser = george@thoughtbot.com
+remotepasseval = get_password("thoughtbot: google.com")
 realdelete = no
 nametrans = gmail_folder_to_local_folder
 folderfilter = should_include_folder

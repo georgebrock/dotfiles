@@ -1,0 +1,6 @@
+set from = "george.brocklehurst@gmail.com"
+set sendmail = "/usr/local/bin/msmtp -a gmail"
+set spoolfile = "+george.brocklehurst-gmail.com/INBOX"
+set mbox = "+george.brocklehurst-gmail.com/archive"
+set postponed = "+george.brocklehurst-gmail.com/drafts"
+macro index gi "<change-folder>+george.brocklehurst-gmail.com/INBOX<enter>" "go to the INBOX"

@@ -27,17 +27,14 @@ unignore subject: from: date: to: cc:
 unhdr_order *
 hdr_order subject: from: date: to: cc:
 
-set spoolfile = "+george.brocklehurst-gmail.com/INBOX"
-set mbox = "+george.brocklehurst-gmail.com/archive"
-set postponed = "+george.brocklehurst-gmail.com/drafts"
-alternates george@thoughtbot\.com george@choosyosx\.com george@iconicosx\.com [^@]+@georgebrock\.com
+mailboxes +george.brocklehurst-gmail.com/INBOX +thoughtbot/INBOX
+alternates george\.brocklehurst@gmail\.com george@thoughtbot\.com george@choosyosx\.com george@iconicosx\.com [^@]+@georgebrock\.com
 
 set date_format = "%Y-%m-%d"
 set index_format = "%4C %Z   %D  %-20.20F  %s"
 set sort = threads
 set sort_aux = reverse-last-date-received
 
-macro index gi "<change-folder>=george.brocklehurst-gmail.com/INBOX<enter>" "go to the INBOX"
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail using notmuch"
 bind index gg first-entry
 bind pager gg top
@@ -74,11 +71,13 @@ set reverse_name
 set include
 set forward_quote
 
-set from = "george.brocklehurst@gmail.com"
-set sendmail = "/usr/local/bin/msmtp -a gmail"
 set sendmail_wait = 0
 unset record
 
 set query_command = "contacts -Sf '%n <%e>' '%s' | grep -v '<>'"
 
 source ~/.mutt/config/mutt-colors-solarized-dark-256.muttrc
+source ~/.mutt/config/account.gmail
+
+folder-hook george\.brocklehurst-gmail\.com "source ~/.mutt/config/account.gmail"
+folder-hook thoughtbot "source ~/.mutt/config/account.thoughtbot"

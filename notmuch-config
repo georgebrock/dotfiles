@@ -11,7 +11,7 @@
 # configured here named ".notmuch".
 #
 [database]
-path=/Users/georgebrocklehurst/.mail/george.brocklehurst-gmail.com
+path=/Users/georgebrocklehurst/.mail
 
 # User configuration
 #
