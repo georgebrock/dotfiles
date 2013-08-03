@@ -1,4 +1,4 @@
-text/html; open %s; nametemplate=%s.html
+text/html; qlmanage -p %s; nametemplate=%s.html
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
 
 application/pdf; qlmanage -p %s; nametemplate=%s.pdf
