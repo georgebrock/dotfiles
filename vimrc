@@ -18,6 +18,7 @@ set incsearch  " Incremental searching
 set colorcolumn=80
 set cursorline " Highlight the line the cursor is on
 set wildmode=longest,list
+set complete+=kspell " Autocomplete with dictionary words when spell check is on
 
 set wildignore+=*.pyc
 
