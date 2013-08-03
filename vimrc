@@ -29,19 +29,15 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.json setfiletype javascript
   autocmd BufNewFile,BufRead *.ejs setfiletype html
 
-  autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd Filetype html,htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd Filetype ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype make setlocal noexpandtab
 
   autocmd Filetype markdown setlocal spell textwidth=80
-  autocmd Filetype gitcommit setlocal spell textwidth=76 colorcolumn=77
-  autocmd Filetype mail setlocal spell textwidth=76 colorcolumn=77
+  autocmd Filetype gitcommit,mail setlocal spell textwidth=76 colorcolumn=77
 endif
 
 map! 3 #
