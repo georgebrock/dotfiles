@@ -5,7 +5,6 @@ export PS1="\[\033[00;36m\]\w\[\033[31m\]\$(__git_ps1 ' %s') > \[\033[0m\]"
 
 bind '"\e3"':'"#"'
 
-alias vim='mvim -v'
 export EDITOR=vim
 export VISUAL=vim
 
@@ -37,3 +36,5 @@ export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB.UTF-8"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+[[ -s ~/.bash_profile.local ]] && source ~/.bash_profile.local
