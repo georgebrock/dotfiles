@@ -1,1 +1,2 @@
 alias vim='mvim -v'
+alias weechat='ssh pingu -t "screen -r weechat || screen -S weechat weechat-curses"'
