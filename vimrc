@@ -85,7 +85,7 @@ command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
 
 function! ExecuteInShell(cmd)
     let t:last_shell_cmd = a:cmd
-    execute(":silent !tmuxsend '".a:cmd."'")
+    execute(":silent !tmuxsend '".a:cmd."'")
     redraw!
 endfunction
 
