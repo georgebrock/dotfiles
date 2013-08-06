@@ -22,6 +22,7 @@ remotepasseval = get_password("Google: george.brocklehurst@gmail.com")
 realdelete = no
 nametrans = gmail_folder_to_local_folder
 folderfilter = should_include_folder
+sslcacertfile = ~/.mutt/Equifax_Secure_CA.cert
 
 [Account thoughtbot]
 localrepository = thoughtbot-local
@@ -42,3 +43,4 @@ remotepasseval = get_password("thoughtbot: google.com")
 realdelete = no
 nametrans = gmail_folder_to_local_folder
 folderfilter = should_include_folder
+sslcacertfile = ~/.mutt/Equifax_Secure_CA.cert
