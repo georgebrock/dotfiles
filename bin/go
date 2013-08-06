@@ -10,4 +10,6 @@ tmux select-pane -t 2
 if [ -f Vagrantfile ]; then
     vagrant up
     vagrant ssh -- -t 'cd /vagrant; bash -l'
+elif [ -f ENV/bin/activate ]; then
+    tmux send-keys -t 0 'source ENV/bin/activate' C-m
 fi
