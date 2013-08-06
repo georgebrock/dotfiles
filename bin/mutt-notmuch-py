@@ -34,8 +34,9 @@ def digest(filename):
 
 def pick_all_mail(messages):
     for m in messages:
-        if 'All Mail' in m:
+        if 'archive' in m:
             return m
+    return messages[0]
 
 
 def empty_dir(directory):
