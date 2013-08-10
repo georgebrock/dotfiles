@@ -37,7 +37,6 @@ set sort_aux = reverse-last-date-received
 
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail using notmuch"
 bind index gg first-entry
-bind pager gg top
 bind index G last-entry
 bind pager G bottom
 bind index \Cf next-page
