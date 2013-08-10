@@ -8,4 +8,5 @@ image/pjpeg; qlmanage -p %s; nametemplate=%s.jpg
 image/png; qlmanage -p %s; nametemplate=%s.png
 image/gif; qlmanage -p %s; nametemplate=%s.gif
 
-application/octet-stream; open %s
+text/*; open %s
+application/*; open %s
