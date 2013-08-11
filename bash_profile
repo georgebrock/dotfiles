@@ -35,6 +35,10 @@ export HOMEBREW_NO_EMOJI="get off my lawn"
 export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB.UTF-8"
 
+# Completion
+export hostname_completion_file=~/.bash_hosts
+complete -A hostname ssh
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 [[ -s ~/.bash_profile.local ]] && source ~/.bash_profile.local
