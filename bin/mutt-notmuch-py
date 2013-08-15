@@ -28,8 +28,11 @@ from optparse import OptionParser
 
 
 def digest(filename):
-    with open(filename) as f:
-        return hashlib.sha1(f.read()).hexdigest()
+    try:
+        with open(filename) as f:
+            return hashlib.sha1(f.read()).hexdigest()
+    except IOError:
+        return None
 
 
 def pick_all_mail(messages):
@@ -65,10 +68,11 @@ def main(dest_box):
 
     for f in files:
         sha = digest(f)
-        if sha not in data.keys():
-            data[sha] = [f]
-        else:
-            data[sha].append(f)
+        if sha:
+            if sha not in data.keys():
+                data[sha] = [f]
+            else:
+                data[sha].append(f)
 
     for sha in data.keys():
         if is_gmail and len(data[sha]) > 1:
