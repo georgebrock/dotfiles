@@ -1,1 +1,11 @@
-/Users/georgebrocklehurst/code/dotfiles/bin/tmuxwidth
+#!/bin/sh
+
+target_width=$1
+current_width=$(tmux list-panes | grep active | cut -d' ' -f2 | grep -Eo '[0-9]+' | head -1)
+delta=$(expr $current_width - $target_width)
+
+if [ $delta -lt 0 ]; then
+    tmux resize-pane -R ${delta:1}
+elif [ $delta -gt 0 ]; then
+    tmux resize-pane -L $delta
+fi
