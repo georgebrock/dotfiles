@@ -62,7 +62,8 @@ set sig_dashes
 set edit_headers
 set fast_reply
 set fcc_attach
-unset mime_forward
+set mime_forward
+set mime_forward_rest
 set forward_format = "Fwd: %s"
 set forward_decode
 set reply_to
