@@ -1,0 +1,23 @@
+#!/bin/sh
+
+get_battery_variable() {
+  name=$1
+  data=$2
+  echo $data | grep -Eo "\"$name\" = [^ ]+" | cut -d' ' -f3
+}
+
+data=$(ioreg -rc AppleSmartBattery)
+full=`get_battery_variable 'FullyCharged' "$data"`
+
+if [ $full == 'Yes' ]; then
+  echo "Full"
+  exit 0
+fi
+
+charging=`get_battery_variable 'IsCharging' "$data"`
+current=`get_battery_variable 'CurrentCapacity' "$data"`
+max=`get_battery_variable 'MaxCapacity' "$data"`
+percentage=$((current * 100 / max))
+charging_message=`[ "$charging" == 'Yes' ] && echo ' (charging)'`
+
+echo "$percentage%$charging_message"
