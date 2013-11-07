@@ -27,7 +27,7 @@ unignore subject: from: date: to: cc:
 unhdr_order *
 hdr_order subject: from: date: to: cc:
 
-mailboxes +george.brocklehurst-gmail.com/INBOX +thoughtbot/INBOX
+mailboxes +george.brocklehurst-gmail.com/INBOX +thoughtbot/INBOX +georgebrock.com/INBOX
 alternates george\.brocklehurst@gmail\.com george@thoughtbot\.com george@choosyosx\.com george@iconicosx\.com [^@]+@georgebrock\.com
 
 set date_format = "%Y-%m-%d"
@@ -81,3 +81,4 @@ source ~/.mutt/config/account.gmail
 
 folder-hook george\.brocklehurst-gmail\.com "source ~/.mutt/config/account.gmail"
 folder-hook thoughtbot "source ~/.mutt/config/account.thoughtbot"
+folder-hook georgebrock\.com "source ~/.mutt/config/account.georgebrock"
