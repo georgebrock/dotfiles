@@ -3,8 +3,6 @@ export PATH=./bin/stubs:~/.bin:/usr/local/bin:/opt/local/bin:/usr/local/heroku/b
 source ~/.bin/git-completion.sh
 export PS1="\[\033[00;36m\]\w\[\033[31m\]\$(__git_ps1 ' %s') > \[\033[0m\]"
 
-bind '"\e3"':'"#"'
-
 export EDITOR=vim
 export VISUAL=vim
 

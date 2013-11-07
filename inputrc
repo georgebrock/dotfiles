@@ -1,1 +1,3 @@
 set expand-tilde on
+
+"\e3": "#"
