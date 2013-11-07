@@ -105,7 +105,7 @@ function! TestCmd()
     elseif (match(l:file, "_spec.rb$") != -1)
         return SpringCmd("spring rspec", "rspec")." ".l:file
     elseif (match(l:file, ".rb$") != -1)
-        return SpringCmd("spring test", "ruby -Itest")." ".l:file
+        return SpringCmd("spring testunit", "ruby -Itest")." ".l:file
     elseif (match(l:file, ".py$") != -1)
         return "nosetests ".l:file
     endif
