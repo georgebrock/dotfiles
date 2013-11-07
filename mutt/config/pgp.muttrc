@@ -1,0 +1,25 @@
+set pgp_decode_command="%?p?1pass --no-prompt 'GPG passphrase' | ?gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
+set pgp_decrypt_command="1pass --no-prompt 'GPG passphrase' | gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+set pgp_sign_command="1pass --no-prompt 'GPG passphrase' | gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="1pass --no-prompt 'GPG passphrase' | gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xB51FFCFB -- -r %r -- %f"
+set pgp_encrypt_sign_command="1pass --no-prompt 'GPG passphrase' | pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xB51FFCFB -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import -v %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
+
+set pgp_sign_as=0xB51FFCFB
+set pgp_timeout=60
+set pgp_good_sign="^gpg: Good signature from"
+set pgp_autosign
+set pgp_replysign
+set pgp_autoencrypt=no
+set pgp_replyencrypt=no
+set pgp_replysignencrypted=yes
+set pgp_verify_sig=yes
+
+unignore X-PGP-Key:
+my_hdr X-PGP-Key: http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0xB51FFCFB

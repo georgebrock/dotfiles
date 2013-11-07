@@ -1,6 +1,7 @@
 [user]
   name = George Brocklehurst
   email = george@georgebrock.com
+  signingkey = B51FFCFB
 [core]
   excludesfile = /Users/georgebrocklehurst/.gitignore
   editor = /usr/bin/vim
