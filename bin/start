@@ -4,7 +4,7 @@ tmux rename-window $(basename `pwd`)
 tmux split-window -hd
 tmux split-window -vd
 tmuxwidth 80
-tmux send-keys -t 1 'git graph' C-m
+tmux send-keys -t 1 'gitsh' C-m
 tmux send-keys -t 2 'vim .' C-m
 tmux select-pane -t 2
 if [ -f Vagrantfile ]; then
