@@ -1,2 +1,2 @@
 alias vim='mvim -v'
-alias weechat='mosh pingu -- screen -r weechat || screen -S weechat weechat-curses'
+alias weechat='mosh pingu -- screen -D -RR weechat TZ="Europe/Stockholm" weechat-curses'
