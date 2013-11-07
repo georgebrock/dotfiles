@@ -99,7 +99,7 @@ function! RepeatInShell()
 endfunction
 
 function! TestCmd()
-    let l:file = expand("%")
+    let l:file = expand("%:.")
     if (match(l:file, ".feature$") != -1)
         return SpringCmd("spring cucumber", "cucumber")." ".l:file
     elseif (match(l:file, "_spec.rb$") != -1)
