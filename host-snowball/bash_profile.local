@@ -1,2 +1,4 @@
 alias vim='mvim -v'
 alias weechat='mosh pingu -- screen -D -RR weechat TZ="Europe/Stockholm" weechat-curses'
+
+export ONEPASSWORD_KEYCHAIN=~/Library/Containers/com.agilebits.onepassword-osx-helper/Data/Documents/1Password.agilekeychain
