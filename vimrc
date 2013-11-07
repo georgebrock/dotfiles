@@ -68,6 +68,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'edsono/vim-matchit'
 Bundle 'git@github.com:thoughtbot/vim-magictags.git'
+Bundle 'jnwhiteh/vim-golang'
 
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInShell("clear; ".TestCmd().":".line("."))<CR>
