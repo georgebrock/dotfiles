@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ $@ == *verify* ]]
+then
+    gpg $@ < /dev/stdin
+else
+    gpg --passphrase $(1pass "GPG passphrase") $@ < /dev/stdin
+fi

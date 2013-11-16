@@ -2,6 +2,8 @@
   name = George Brocklehurst
   email = george@georgebrock.com
   signingkey = B51FFCFB
+[gpg]
+  program = 1passgpg
 [core]
   excludesfile = /Users/georgebrocklehurst/.gitignore
   editor = /usr/bin/vim
