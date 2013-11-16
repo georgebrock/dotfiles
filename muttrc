@@ -67,7 +67,6 @@ set mime_forward_rest
 set forward_format = "Fwd: %s"
 set forward_decode
 set reply_to
-set reverse_name
 set include
 set forward_quote
 
