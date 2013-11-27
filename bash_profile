@@ -18,7 +18,8 @@ alias gf="git fetch"
 alias gb="git branch"
 alias gg="git grep -En"
 
-alias vup="vagrant halt; vagrant up; vagrant ssh -- -t 'cd /vagrant; bash -l'"
+alias vup="vagrant up; vagrant ssh -- -t 'cd /vagrant; bash -l'"
+alias vreup="vagrant halt; vup"
 
 alias psg="ps auxwww | head -n 1 ; ps auxwww | grep -Ei"
 alias ll="ls -l"
