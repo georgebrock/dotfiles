@@ -1,7 +1,7 @@
 export PATH=./bin/stubs:~/.bin:/usr/local/bin:/opt/local/bin:/usr/local/heroku/bin:/usr/local/share/npm/bin:~/code/git-browse/bin:$PATH
 
 source ~/.bin/git-completion.sh
-export PS1="\[\033[00;33m\]\h \[\033[00;36m\]\W\[\033[31m\] \$ \[\033[0m\]"
+export PS1="\[\033[00;33m\]\h \[\033[00;36m\]\W\[\033[31m\]\$ \[\033[0m\]"
 
 export EDITOR=vim
 export VISUAL=vim
