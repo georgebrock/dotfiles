@@ -34,9 +34,10 @@ if has("autocmd")
   autocmd Filetype html,htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd Filetype treetop setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype make setlocal noexpandtab
+  autocmd Filetype make,automake setlocal noexpandtab
 
   autocmd Filetype markdown setlocal spell textwidth=80
   autocmd Filetype gitcommit,mail setlocal spell textwidth=76 colorcolumn=77
