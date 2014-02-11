@@ -46,3 +46,6 @@
   date = short
 [help]
   autocorrect = 1
+[grep]
+  lineNumber = true
+  patternType = extended
