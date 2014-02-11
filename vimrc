@@ -84,6 +84,14 @@ map <leader>m :silent !open -a Marked %<CR>:redraw!<CR>
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>b :call ToggleBackground()<CR>
 
+xnoremap . :normal .<CR> " . command in visual mode
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
 command! -nargs=+ Shell :call ExecuteInShell(<q-args>)
 command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
 
