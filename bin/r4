@@ -1,1 +1,1 @@
-open -b com.google.chrome http://www.bbc.co.uk/iplayer/radio/bbc_radio_fourfm/listenlive
+open -b com.google.chrome http://www.bbc.co.uk/radio/player/bbc_radio_four

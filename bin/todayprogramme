@@ -6,7 +6,7 @@ import time
 import urllib
 import webbrowser
 
-LIVE_URL = "http://www.bbc.co.uk/iplayer/radio/bbc_radio_fourfm/listenlive"
+LIVE_URL = "http://www.bbc.co.uk/radio/player/bbc_radio_four"
 IPLAYER_URL = "http://www.bbc.co.uk/i/%s?t=0m1s"
 EPISODES_URL = "http://www.bbc.co.uk/programmes/b006qj9z/episodes/player.json"
 
