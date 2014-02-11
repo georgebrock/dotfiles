@@ -112,11 +112,11 @@ endfunction
 function! TestCmd()
     let l:file = expand("%:.")
     if (match(l:file, ".feature$") != -1)
-        return SpringCmd("spring cucumber", "cucumber")." ".l:file
+        return "cucumber ".l:file
     elseif (match(l:file, "_spec.rb$") != -1)
-        return SpringCmd("spring rspec", "rspec")." ".l:file
+        return "rspec ".l:file
     elseif (match(l:file, ".rb$") != -1)
-        return SpringCmd("spring testunit", "ruby -Itest")." ".l:file
+        return SpringCmd("testunit", "ruby -Itest")." ".l:file
     elseif (match(l:file, ".py$") != -1)
         return "nosetests ".l:file
     endif
