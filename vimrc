@@ -119,6 +119,8 @@ function! TestCmd()
         return SpringCmd("testunit", "ruby -Itest")." ".l:file
     elseif (match(l:file, ".py$") != -1)
         return "nosetests ".l:file
+    elseif (match(l:file, "_spec.js.coffee$") != -1)
+        return "teaspoon ".l:file
     endif
 endfunction
 
