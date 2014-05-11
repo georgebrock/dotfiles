@@ -1,0 +1,18 @@
+Host github.com
+    User git
+    Hostname github.com
+    IdentityFile /Users/georgebrocklehurst/.ssh/id_rsa
+
+Host *.dev
+    ForwardAgent yes
+
+Host git.tddium.com
+    IdentityFile /Users/georgebrocklehurst/.ssh/id_rsa.pub
+    IdentitiesOnly yes
+
+Host pingu
+    Hostname pingu.georgebrock.com
+
+Host trusthoarder
+    User george
+    Hostname trusthoarder.com
