@@ -50,3 +50,5 @@
 [grep]
   lineNumber = true
   patternType = extended
+[fetch]
+	prune = true
