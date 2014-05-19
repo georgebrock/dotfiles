@@ -28,6 +28,7 @@
   # New version of sb. All remotes:
   sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | \
        xargs git show-branch $(git cb)
+	tig = !tig
 [mergetool "mvimdiff"]
   cmd = /usr/local/bin/mvimdiff -f $LOCAL $MERGED $REMOTE
 [merge]
