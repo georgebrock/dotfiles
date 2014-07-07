@@ -73,6 +73,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'git@github.com:thoughtbot/vim-magictags.git'
 Bundle 'jnwhiteh/vim-golang'
 
+map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInShell("clear; ".TestCmd().":".line("."))<CR>
 map <leader>r :call ExecuteInShell("clear; ".AllTestsCmd())<CR>
@@ -97,7 +98,11 @@ command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
 
 function! ExecuteInShell(cmd)
     let t:last_shell_cmd = a:cmd
-    execute(":silent !tmuxsend '".a:cmd."'")
+    if (system("tmux list-panes | wc -l | grep -Eo '(\\d+)'") > 1)
+        execute(":silent !tmuxsend '".a:cmd."'")
+    else
+        execute(":!".a:cmd)
+    endif
     redraw!
 endfunction
 
