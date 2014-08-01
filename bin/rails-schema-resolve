@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export RAILS_ENV=test
+git_dir=$(git rev-parse --git-dir)
+rebase_base=$(cat "$git_dir/rebase-apply/onto")
+
+git checkout "$rebase_base" -- db/schema.rb
+rake db:drop db:create db:schema:load
+rake db:migrate
