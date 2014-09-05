@@ -53,7 +53,8 @@ set menu_scroll
 set tilde
 unset markers
 
-alternative_order text/plain text/enriched text/html
+message-hook -A 'unalternative_order; alternative_order text/plain text/enriched text/html'
+message-hook '~f trello\.com' 'unalternative_order; alternative_order text/html'
 auto_view text/html
 
 set realname = "George Brocklehurst"
