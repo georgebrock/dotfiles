@@ -9,26 +9,18 @@
   editor = /usr/bin/vim
 [push]
   default = current
-
 [color]
   ui = auto
-
 [alias]
   c-p = cherry-pick
   graph = log --all --graph --decorate --oneline -n30
   rgrep = !git grep
-
-  # Current branch:
-  cb = !git branch | grep ^* | cut -d' ' -f2
-
-  # Remote tracked branch:
+  cb = symbolic-ref HEAD --short
   rb = !git for-each-ref --format='%(upstream:short)' \
        "refs/heads/$(git cb)"
-
-  # New version of sb. All remotes:
   sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | \
        xargs git show-branch $(git cb)
-	tig = !tig
+  tig = !tig
 [mergetool "mvimdiff"]
   cmd = /usr/local/bin/mvimdiff -f $LOCAL $MERGED $REMOTE
 [merge]
@@ -51,4 +43,4 @@
   lineNumber = true
   patternType = extended
 [fetch]
-	prune = true
+  prune = true
