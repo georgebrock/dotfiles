@@ -3,7 +3,9 @@
   email = george@georgebrock.com
   signingkey = B51FFCFB
 [gpg]
-  program = 1passgpg
+  program = gpg2
+[commit]
+  gpgsign = true
 [core]
   excludesfile = /Users/georgebrocklehurst/.gitignore
   editor = /usr/bin/vim

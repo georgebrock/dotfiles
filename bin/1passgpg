@@ -2,7 +2,7 @@
 
 if [[ $@ == *verify* ]]
 then
-    gpg $@ < /dev/stdin
+    gpg2 $@ < /dev/stdin
 else
-    gpg --passphrase $(1pass "GPG passphrase") $@ < /dev/stdin
+    gpg2 --passphrase $(1pass "GPG passphrase") $@ < /dev/stdin
 fi
