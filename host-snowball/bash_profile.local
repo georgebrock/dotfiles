@@ -3,4 +3,9 @@ alias weechat='mosh pingu -- screen -D -RR weechat weechat-curses'
 
 export ONEPASSWORD_KEYCHAIN=~/Library/Containers/com.agilebits.onepassword-osx-helper/Data/Documents/1Password.agilekeychain
 
+# Postgres.app
+# See: http://iamvery.com/2013/06/17/postgresapp-with-unix-socket.html
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export PGHOST=/var/pgsql_socket
+
 source /usr/local/bin/virtualenvwrapper.sh
