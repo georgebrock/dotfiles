@@ -2,7 +2,7 @@
 
 export RAILS_ENV=test
 git_dir=$(git rev-parse --git-dir)
-rebase_base=$(cat "$git_dir/rebase-apply/onto")
+rebase_base=$(cat "$git_dir/rebase-apply/onto" || cat "$git_dir/rebase-merge/onto")
 
 git checkout "$rebase_base" -- db/schema.rb
 rake db:drop db:create db:schema:load
