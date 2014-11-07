@@ -81,6 +81,8 @@ map <leader>/ :nohlsearch<CR>
 map <leader>m :silent !open -a Marked %<CR>:redraw!<CR>
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>b :call ToggleBackground()<CR>
+map <leader>2 :setlocal tabstop=2 softtabstop=2 shiftwidth=2<CR>
+map <leader>4 :setlocal tabstop=4 softtabstop=4 shiftwidth=4<CR>
 
 xnoremap . :normal .<CR> " . command in visual mode
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
