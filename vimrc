@@ -30,7 +30,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.css.erb,*.spriter setfiletype css
   autocmd BufNewFile,BufRead *.mkd,*.md,*.markdown setfiletype markdown
   autocmd BufNewFile,BufRead *.json setfiletype javascript
-  autocmd BufNewFile,BufRead *.ejs setfiletype html
+  autocmd BufNewFile,BufRead *.ejs,*.hbs setfiletype html
 
   autocmd Filetype html,htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -73,6 +73,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'edsono/vim-matchit'
 Bundle 'git@github.com:thoughtbot/vim-magictags.git'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'nono/vim-handlebars'
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
