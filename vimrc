@@ -48,11 +48,6 @@ map! 3 #
 nmap r3 r#
 map! - –
 
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 noremap 1 :tabnext 1<CR>
 noremap 2 :tabnext 2<CR>
 noremap 3 :tabnext 3<CR>
