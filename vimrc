@@ -11,7 +11,6 @@ set showcmd  " Show the current command in the footer
 set ruler  " Show line and col numbers in footer
 set modeline  " Read modelines from files
 set laststatus=2  " Show status line (filename, etc.) always in all windows
-set autoindent  " Auto-indent!
 set relativenumber  " Show line numbers
 set hlsearch  " Highlight the current search term
 set incsearch  " Incremental searching
@@ -23,6 +22,8 @@ set splitright
 set splitbelow
 
 set wildignore+=*.pyc
+
+filetype indent on
 
 if has("autocmd")
   autocmd BufNewFile,BufRead *.ru setfiletype ruby
