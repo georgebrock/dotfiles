@@ -31,6 +31,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.mkd,*.md,*.markdown setfiletype markdown
   autocmd BufNewFile,BufRead *.json setfiletype javascript
   autocmd BufNewFile,BufRead *.ejs,*.hbs setfiletype html
+  autocmd BufNewFile,BufRead *.go setfiletype go
 
   autocmd Filetype html,htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -39,6 +40,7 @@ if has("autocmd")
   autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
   autocmd Filetype make,automake setlocal noexpandtab
+  autocmd Filetype go setlocal noexpandtab
 
   autocmd Filetype markdown setlocal spell textwidth=80
   autocmd Filetype gitcommit,mail setlocal spell textwidth=76 colorcolumn=77

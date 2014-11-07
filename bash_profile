@@ -34,6 +34,7 @@ export LSCOLORS=gxFxCxDxBxegedabagacad
 export HOMEBREW_NO_EMOJI="get off my lawn"
 export LC_ALL="en_GB.UTF-8"
 export LANG="en_GB.UTF-8"
+export GOPATH="$HOME/golang"
 
 # Completion
 export hostname_completion_file=~/.bash_hosts
