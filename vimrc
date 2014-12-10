@@ -71,6 +71,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'git@github.com:thoughtbot/vim-magictags.git'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'nono/vim-handlebars'
+Bundle 'ConradIrwin/vim-bracketed-paste'
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
