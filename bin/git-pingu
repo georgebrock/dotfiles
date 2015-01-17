@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env gitsh
 
-repo="`basename \`pwd\``.git"
-ssh git@pingu.georgebrock.com "git init --bare $repo"
-git remote add pingu git@pingu.georgebrock.com:$repo
-git push -u --all pingu
-git push --tags pingu
+:set pwd $(!pwd)
+:set repo "$(!basename $pwd).git"
+
+!ssh git@pingu.georgebrock.com "git init --bare $repo"
+remote add pingu git@pingu.georgebrock.com:$repo
+push -u --all pingu
+push --tags pingu
