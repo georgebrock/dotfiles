@@ -1,8 +1,5 @@
 syntax on
 
-set background=dark
-colorscheme solarized
-
 set list  " Shows invisible characters
 set listchars=tab:▸\ ,eol:¬
 set expandtab  " Use spaces, not tabs
@@ -60,18 +57,22 @@ noremap 7 :tabnext 7<CR>
 noremap 8 :tabnext 8<CR>
 noremap 9 :tablast<CR>
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-rails'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'edsono/vim-matchit'
+Plugin 'git@github.com:thoughtbot/vim-magictags.git'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'nono/vim-handlebars'
+Plugin 'ConradIrwin/vim-bracketed-paste'
+call vundle#end()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-rails'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'edsono/vim-matchit'
-Bundle 'git@github.com:thoughtbot/vim-magictags.git'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'nono/vim-handlebars'
-Bundle 'ConradIrwin/vim-bracketed-paste'
+set background=dark
+colorscheme solarized
+
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
