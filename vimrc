@@ -68,6 +68,7 @@ Plugin 'git@github.com:thoughtbot/vim-magictags.git'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'nono/vim-handlebars'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
 set background=dark
