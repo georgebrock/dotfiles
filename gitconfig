@@ -19,11 +19,9 @@
   c-p = cherry-pick
   graph = log --all --graph --decorate --oneline -n30
   rgrep = !git grep
-  cb = symbolic-ref HEAD --short
-  rb = !git for-each-ref --format='%(upstream:short)' \
-       "refs/heads/$(git cb)"
-  sb = !ls .git/refs/remotes/*/$(git cb) | cut -d/ -f4,5 | \
-       xargs git show-branch $(git cb)
+  cb = rev-parse --abbrev-ref --symbolic-full-name HEAD
+  rb = rev-parse --abbrev-ref --symbolic-full-name HEAD@{u}
+  sb = !git show-branch $(git cb) $(git rb)
   tig = !tig
 [mergetool "vimdiff"]
   cmd = vimdiff -f $LOCAL $MERGED $REMOTE
