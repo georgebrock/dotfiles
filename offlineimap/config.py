@@ -10,7 +10,7 @@ FOLDER_MAP = {
 
 INVERSE_FOLDER_MAP = {v:k for k,v in FOLDER_MAP.items()}
 
-EXCLUDED_FOLDERS = ["[Gmail]/Trash", "[Gmail]/Important", "[Gmail]/Spam"]
+INCLUDED_FOLDERS = ["INBOX"] + FOLDER_MAP.values()
 
 def local_folder_to_gmail_folder(folder):
     return FOLDER_MAP.get(folder, folder)
@@ -19,7 +19,7 @@ def gmail_folder_to_local_folder(folder):
     return INVERSE_FOLDER_MAP.get(folder, folder)
 
 def should_include_folder(folder):
-    return folder not in EXCLUDED_FOLDERS
+    return folder in INCLUDED_FOLDERS
 
 def get_password(name):
     try:
