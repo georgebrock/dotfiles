@@ -11,6 +11,8 @@
   editor = /usr/bin/vim
 [push]
   default = current
+[rebase]
+  autosquash = true
 [color]
   ui = auto
 [alias]
