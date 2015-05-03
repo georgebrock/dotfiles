@@ -13,6 +13,10 @@ Host git.tddium.com
 Host pingu
     Hostname pingu.georgebrock.com
 
+Host yeti yeti.georgebrock.com
+    User georgebrock
+    Hostname yeti.georgebrock.com
+
 Host trusthoarder
     User george
     Hostname trusthoarder.com
