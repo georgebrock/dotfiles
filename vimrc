@@ -3,7 +3,7 @@ syntax on
 set list  " Shows invisible characters
 set listchars=tab:▸\ ,eol:¬
 set expandtab  " Use spaces, not tabs
-set tabstop=4 softtabstop=4 shiftwidth=4  " Default tab size
+set tabstop=2 softtabstop=2 shiftwidth=2  " Default tab size
 set showcmd  " Show the current command in the footer
 set ruler  " Show line and col numbers in footer
 set modeline  " Read modelines from files
@@ -30,12 +30,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.ejs,*.hbs setfiletype html
   autocmd BufNewFile,BufRead *.go setfiletype go
 
-  autocmd Filetype html,htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype cucumber setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype treetop setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-  autocmd Filetype css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd Filetype make,automake setlocal noexpandtab
   autocmd Filetype go setlocal noexpandtab
 
