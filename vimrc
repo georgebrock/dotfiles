@@ -20,6 +20,7 @@ set splitbelow
 
 set wildignore+=*.pyc
 
+filetype plugin on
 filetype indent on
 
 if has("autocmd")
