@@ -75,6 +75,8 @@ unset record
 
 set query_command = "contacts -Sf '%n <%e>' '%s' | grep -v '<>'"
 
+unignore List-Unsubscribe:
+
 source ~/.mutt/config/mutt-colors-solarized-dark-256.muttrc
 source ~/.mutt/config/account.georgebrock
 source ~/.mutt/config/pgp.muttrc
