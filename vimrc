@@ -128,6 +128,8 @@ function! TestCmd()
         return "nosetests ".l:file
     elseif (match(l:file, "_spec.js.coffee$") != -1)
         return "teaspoon ".l:file
+    elseif (match(l:file, ".test.coffee$") != -1)
+        return "PATH=\"$(npm bin):$PATH\" mocha ".l:file
     endif
 endfunction
 
