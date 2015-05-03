@@ -23,7 +23,9 @@ set wildignore+=*.pyc
 filetype plugin on
 filetype indent on
 
-if has("autocmd")
+augroup georgebrock
+  autocmd!
+
   autocmd BufNewFile,BufRead *.ru setfiletype ruby
   autocmd BufNewFile,BufRead *.css.erb,*.spriter setfiletype css
   autocmd BufNewFile,BufRead *.mkd,*.md,*.markdown setfiletype markdown
@@ -37,7 +39,7 @@ if has("autocmd")
 
   autocmd Filetype markdown setlocal spell textwidth=80
   autocmd Filetype gitcommit,mail setlocal spell textwidth=76 colorcolumn=77
-endif
+augroup END
 
 map! 3 #
 nmap r3 r#
