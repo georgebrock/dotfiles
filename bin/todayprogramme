@@ -9,7 +9,7 @@ import webbrowser
 
 TODAY_PID = "b006qj9z"
 LIVE_URL = "http://www.bbc.co.uk/radio/player/bbc_radio_four"
-IPLAYER_URL = "http://www.bbc.co.uk/i/%s?t=0m1s"
+IPLAYER_URL = "http://www.bbc.co.uk/programmes/%s?t=0m1s#auto"
 SCHEDULE_URL = "http://www.bbc.co.uk/radio4/programmes/schedules/fm/today.json"
 
 
