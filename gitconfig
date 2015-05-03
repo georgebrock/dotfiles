@@ -44,3 +44,5 @@
   patternType = extended
 [fetch]
   prune = true
+[gitsh]
+  prompt = "%D %c%b%#%w"
