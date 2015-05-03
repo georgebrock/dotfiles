@@ -14,7 +14,7 @@
 [rebase]
   autosquash = true
 [color]
-  ui = auto
+  ui = true
 [alias]
   c-p = cherry-pick
   graph = log --all --graph --decorate --oneline -n30
