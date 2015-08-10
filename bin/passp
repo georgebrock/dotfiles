@@ -1,0 +1,10 @@
+#!/bin/sh
+
+password_store="$HOME/.password-store"
+
+options () {
+  find $password_store -type f -name *.gpg | \
+    sed "s|$password_store/||" | sed 's/\.gpg$//'
+}
+
+pass "$@" $(options | pick)
