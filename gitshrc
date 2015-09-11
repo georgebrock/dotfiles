@@ -1,0 +1,6 @@
+:set color.ui true
+
+:echo
+status
+:echo
+log --oneline -n 1
