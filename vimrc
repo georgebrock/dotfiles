@@ -67,11 +67,17 @@ Plugin 'jnwhiteh/vim-golang'
 Plugin 'nono/vim-handlebars'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 set background=dark
 colorscheme solarized
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['flake8']
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
