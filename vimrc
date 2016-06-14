@@ -34,6 +34,7 @@ augroup georgebrock
   autocmd BufNewFile,BufRead *.json setfiletype javascript
   autocmd BufNewFile,BufRead *.ejs,*.hbs setfiletype html
   autocmd BufNewFile,BufRead *.go setfiletype go
+  autocmd BufNewFile,BufRead *.slim setfiletype slim
 
   autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd Filetype make,automake setlocal noexpandtab
@@ -70,6 +71,7 @@ Plugin 'nono/vim-handlebars'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
+Plugin 'slim-template/vim-slim'
 call vundle#end()
 
 set background=dark
