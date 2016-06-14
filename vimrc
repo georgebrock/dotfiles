@@ -18,6 +18,7 @@ set wildmode=longest,list
 set complete+=kspell " Autocomplete with dictionary words when spell check is on
 set splitright
 set splitbelow
+set nojoinspaces
 
 set wildignore+=*.pyc
 
