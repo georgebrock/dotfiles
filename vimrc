@@ -35,6 +35,7 @@ augroup georgebrock
   autocmd BufNewFile,BufRead *.ejs,*.hbs setfiletype html
   autocmd BufNewFile,BufRead *.go setfiletype go
   autocmd BufNewFile,BufRead *.slim setfiletype slim
+  autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
 
   autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd Filetype make,automake setlocal noexpandtab
@@ -72,6 +73,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
+Plugin 'elixir-lang/vim-elixir'
 call vundle#end()
 
 set background=dark
@@ -140,6 +142,8 @@ function! TestCmd()
         return "teaspoon ".l:file
     elseif (match(l:file, ".test.coffee$") != -1)
         return "PATH=\"$(npm bin):$PATH\" mocha ".l:file
+    elseif (match(l:file, ".exs") != -1)
+        return "mix test ".l:file
     endif
 endfunction
 
