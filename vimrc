@@ -88,6 +88,7 @@ let g:syntastic_python_checkers=['flake8']
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
 map <leader>T :call ExecuteInShell("clear; ".TestCmd().":".line("."))<CR>
+map <leader>d :call ExecuteInShell("clear; ".DjangoTestCmd())<CR>
 map <leader>r :call ExecuteInShell("clear; ".AllTestsCmd())<CR>
 map <leader>M :call ExecuteInShell("clear; make")<CR>
 map <leader><leader> :call RepeatInShell()<CR>
@@ -145,6 +146,12 @@ function! TestCmd()
     elseif (match(l:file, ".exs") != -1)
         return "mix test ".l:file
     endif
+endfunction
+
+function! DjangoTestCmd()
+  let l:file = expand("%:.")
+  let l:module = substitute(substitute(l:file, "/", ".", "g"), "\.py$", "", "")
+  return "python manage.py test ".l:module
 endfunction
 
 function! AllTestsCmd()
