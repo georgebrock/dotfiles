@@ -1,7 +1,7 @@
 Host github.com
+    Hostname ssh.github.com
+    Port 443
     User git
-    Hostname github.com
-    IdentityFile /Users/georgebrocklehurst/.ssh/id_rsa
 
 Host *.dev
     ForwardAgent yes
