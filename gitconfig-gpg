@@ -1,0 +1,6 @@
+[user]
+  signingkey = B51FFCFB
+[gpg]
+  program = gpg
+[commit]
+  gpgsign = true

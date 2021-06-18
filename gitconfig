@@ -1,11 +1,6 @@
 [user]
   name = George Brocklehurst
   email = george@georgebrock.com
-  signingkey = B51FFCFB
-[gpg]
-  program = gpg
-[commit]
-  gpgsign = true
 [core]
   excludesfile = ~/.gitignore
 [push]
@@ -45,3 +40,5 @@
   prune = true
 [gitsh]
   prompt = "%D %c%b%#%w"
+[include]
+  path = ~/.gitconfig-gpg
