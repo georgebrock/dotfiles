@@ -3,7 +3,7 @@
   email = george@georgebrock.com
   signingkey = B51FFCFB
 [gpg]
-  program = gpg2
+  program = gpg
 [commit]
   gpgsign = true
 [core]

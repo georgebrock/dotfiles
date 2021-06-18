@@ -17,7 +17,6 @@ alias ga="git add"
 alias gf="git fetch"
 alias gb="git branch"
 alias gg="git grep -En"
-alias gpg="gpg2"
 
 alias vup="vagrant up; vagrant ssh -- -t 'cd /vagrant; bash -l'"
 alias vreup="vagrant halt; vup"
@@ -42,11 +41,6 @@ complete -A hostname ssh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-  export GPG_TTY=$(tty)
-fi
+export GPG_TTY=$(tty)
 
 [[ -s ~/.bash_profile.local ]] && source ~/.bash_profile.local
