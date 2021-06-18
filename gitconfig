@@ -7,7 +7,7 @@
 [commit]
   gpgsign = true
 [core]
-  excludesfile = /Users/georgebrocklehurst/.gitignore
+  excludesfile = ~/.gitignore
   editor = /usr/bin/vim
 [push]
   default = current
