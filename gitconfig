@@ -8,7 +8,6 @@
   gpgsign = true
 [core]
   excludesfile = ~/.gitignore
-  editor = /usr/bin/vim
 [push]
   default = current
 [rebase]
