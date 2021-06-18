@@ -6,17 +6,6 @@ Host github.com
 Host *.dev
     ForwardAgent yes
 
-Host git.tddium.com
-    IdentityFile /Users/georgebrocklehurst/.ssh/id_rsa.pub
-    IdentitiesOnly yes
-
-Host pingu
-    Hostname pingu.georgebrock.com
-
 Host yeti yeti.georgebrock.com
     User georgebrock
     Hostname yeti.georgebrock.com
-
-Host trusthoarder
-    User george
-    Hostname trusthoarder.com
