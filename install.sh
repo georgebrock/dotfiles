@@ -6,7 +6,7 @@ set -x
 
 
 if [[ "$CODESPACES" = "true" ]]; then
-  sudo apt-get install rcm tmux
+  sudo apt-get install -y rcm tmux
   rcup -v -t linux -t development
 elif [[ "$(uname)" = "Darwin" ]]; then
   brew install rcm
