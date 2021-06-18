@@ -74,7 +74,7 @@ Plugin 'elixir-lang/vim-elixir'
 call vundle#end()
 
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
