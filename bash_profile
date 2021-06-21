@@ -11,8 +11,6 @@ alias ll="ls -l"
 export HISTFILESIZE=10000
 export CLICOLOR=1
 export LSCOLORS=gxFxCxDxBxegedabagacad
-export LC_ALL="en_GB.UTF-8"
-export LANG="en_GB.UTF-8"
 
 # Completion
 export hostname_completion_file=~/.bash_hosts
