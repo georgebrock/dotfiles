@@ -6,6 +6,7 @@ set -x
 
 
 if [[ "$CODESPACES" = "true" ]]; then
+  rm ~/.bashrc
   sudo apt-get install -y rcm tmux
   rcup -f -v -d . -t linux -t development
 elif [[ "$(uname)" = "Darwin" ]]; then
