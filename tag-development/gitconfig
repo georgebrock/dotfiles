@@ -42,3 +42,4 @@
   prompt = "%D %c%b%#%w"
 [include]
   path = ~/.gitconfig-gpg
+  path = ~/.gitconfig-macos
