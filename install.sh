@@ -23,3 +23,8 @@ if [[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]]; then
 fi
 
 vim +PluginInstall +qa
+
+if [[ "$CODESPACES" = "true" ]]; then
+  # Default to HTTPS for GitHub access
+  git config --global url.https://github.com/.insteadOf git@github.com:
+fi
