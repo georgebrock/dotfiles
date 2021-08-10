@@ -1,4 +1,4 @@
-export PATH="~/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
 export PS1="\[\033[00;33m\]\h \[\033[00;36m\]\W\[\033[31m\]\$ \[\033[0m\]"
 
