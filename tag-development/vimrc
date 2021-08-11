@@ -110,7 +110,7 @@ command! -nargs=+ Rake :call ExecuteInShell("rake ".<q-args>)
 
 function! ExecuteInShell(cmd)
     let t:last_shell_cmd = a:cmd
-    if (system("tmux list-panes | wc -l | grep -Eo '(\\d+)'") > 1)
+    if (system("tmux list-panes | wc -l | grep -Eo '([0-9]+)'") > 1)
         execute(":silent !tmuxsend '".a:cmd."'")
     else
         execute(":!".a:cmd)
