@@ -132,8 +132,8 @@ function! TestCmd()
         return "cucumber ".l:file
     elseif (match(l:file, "_spec.rb$") != -1)
         return "rspec ".l:file
-    elseif (match(l:file, ".rb$") != -1)
-        return SpringCmd("testunit", "ruby -Itest")." ".l:file
+    elseif (match(l:file, "_test.rb$") != -1)
+        return "./bin/rails test ".l:file
     elseif (match(l:file, ".py$") != -1)
         return "nosetests ".l:file
     elseif (match(l:file, "_spec.js.coffee$") != -1)
