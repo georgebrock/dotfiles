@@ -1,3 +1,5 @@
+IdentityFile /Users/georgebrock/.ssh/id_ed25519
+
 Host github.com
     Hostname ssh.github.com
     Port 443
@@ -9,3 +11,14 @@ Host *.dev
 Host yeti yeti.georgebrock.com
     User georgebrock
     Hostname yeti.georgebrock.com
+
+Host codespace
+  GlobalKnownHostsFile /dev/null
+  UserKnownHostsFile /dev/null
+  Hostname localhost
+  NoHostAuthenticationForLocalhost yes
+  Port 2222
+  StreamLocalBindUnlink yes
+  StrictHostKeyChecking no
+  UpdateHostKeys no
+  User root
