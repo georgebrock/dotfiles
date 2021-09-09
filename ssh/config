@@ -1,4 +1,5 @@
 IdentityFile /Users/georgebrock/.ssh/id_ed25519
+SendEnv TZ LC_*
 
 Host github.com
     Hostname ssh.github.com

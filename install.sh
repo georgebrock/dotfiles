@@ -9,6 +9,11 @@ if [[ "$CODESPACES" = "true" ]]; then
   rm ~/.bashrc
   sudo apt-get install -y rcm tmux ctags
   rcup -f -v -d . -t linux -t development
+
+  if [[ -d /etc/ssh ]]; then
+    echo 'AcceptEnv TZ LC_*' >> /etc/ssh/sshd_config
+  fi
+
 elif [[ "$(uname)" = "Darwin" ]]; then
   brew install rcm
   rcup -v -t macos
