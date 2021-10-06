@@ -71,6 +71,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-obsession'
 call vundle#end()
 
 set background=dark

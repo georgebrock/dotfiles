@@ -8,3 +8,4 @@ tags.temp
 bin/stubs
 .bundle
 .vagrant
+Session.vim
