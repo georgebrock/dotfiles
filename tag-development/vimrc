@@ -73,6 +73,7 @@ Plugin 'nono/vim-handlebars'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-obsession'
 Plugin 'dense-analysis/ale'
 call vundle#end()
