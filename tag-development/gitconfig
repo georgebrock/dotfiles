@@ -43,3 +43,5 @@
 [include]
   path = ~/.gitconfig-gpg
   path = ~/.gitconfig-macos
+[init]
+	defaultBranch = main
