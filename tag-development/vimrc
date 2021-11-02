@@ -59,6 +59,9 @@ noremap 7 :tabnext 7<CR>
 noremap 8 :tabnext 8<CR>
 noremap 9 :tablast<CR>
 
+noremap <C-j> :ALENext<CR>
+noremap <C-k> :ALEPrev<CR>
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/vundle'
@@ -71,6 +74,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-obsession'
+Plugin 'dense-analysis/ale'
 call vundle#end()
 
 set background=dark
