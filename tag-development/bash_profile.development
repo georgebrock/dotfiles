@@ -11,5 +11,3 @@ alias ga="git add"
 alias gf="git fetch"
 alias gb="git branch"
 alias gg="git grep -En"
-
-export RUBYOPT='rubygems'
