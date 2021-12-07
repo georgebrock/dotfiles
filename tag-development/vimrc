@@ -60,7 +60,9 @@ noremap 8 :tabnext 8<CR>
 noremap 9 :tablast<CR>
 
 noremap <C-j> :ALENext<CR>
-noremap <C-k> :ALEPrev<CR>
+noremap <C-k> :ALEPrevious<CR>
+
+set omnifunc=ale#completion#OmniFunc
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
