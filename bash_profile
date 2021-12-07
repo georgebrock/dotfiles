@@ -17,6 +17,6 @@ export LSCOLORS=gxFxCxDxBxegedabagacad
 export hostname_completion_file=~/.bash_hosts
 complete -A hostname ssh
 
-[[ -s ~/.bash_profile.gpg ]] && source ~/.bash_profile.gpg
-[[ -s ~/.bash_profile.development ]] && source ~/.bash_profile.development
-[[ -s ~/.bash_profile.local ]] && source ~/.bash_profile.local
+for path in $(ls -a ~/.bash_profile.*); do
+  source $path
+done
