@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require "date"
+require "erb"
+
+START_WEEK = Date.new(2021, 6, 14)
+
+markdown = ERB.new(DATA.read).result_with_hash(
+  week_no: ((Date.today - START_WEEK) / 7).to_i,
+  day_no: Date.today.wday,
+)
+
+system("dayone2", "new", "-j", "Work Log", markdown)
+system("open", "-a", "Day One")
+
+__END__
+# Week <%= week_no %>, day <%= day_no %>
+
+- ⏰ Morning routine
+  - [ ] 💬 Read Slack
+  - [ ] 📆 Check calendar
+  - [ ] 📥 Process inbox
+  - [ ] 🪲  Check in on flaky tests
+  - [ ] 📝 Update the plan
+  - [ ] 👓 Post to Geekbot
+  - 🕰 Total time: ...
+- ...
+
+---
+
+## The Plan
