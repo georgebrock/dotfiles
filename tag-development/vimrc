@@ -63,6 +63,7 @@ noremap <C-j> :ALENext<CR>
 noremap <C-k> :ALEPrevious<CR>
 
 set omnifunc=ale#completion#OmniFunc
+set updatetime=500
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
