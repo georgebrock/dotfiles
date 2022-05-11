@@ -65,6 +65,12 @@ noremap <C-k> :ALEPrevious<CR>
 set omnifunc=ale#completion#OmniFunc
 set updatetime=500
 
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\  'typescript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/vundle'
