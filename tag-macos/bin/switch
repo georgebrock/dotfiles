@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+# @raycast.schemaVersion 1
+# @raycast.title Switch Computer
+# @raycast.mode fullOutput
+# @raycast.packageName georgebrock
+#
+# @raycast.icon 💻
+#
+# Documentation:
+# @raycast.description Switch between computers
+# @raycast.author georgebrock
+# @raycast.authorURL https://georgebrock.com
+
+INPUT_DISPLAY_PORT_1=15
+INPUT_HDMI_1=17
+INPUT_HDMI_2=18
+
+machine="$1"
+if [[ -z "$machine" ]] && [[ "$(hostname -s)" == "boulder" ]]; then
+  machine="coalface"
+elif [[ -z "$machine" ]] && [[ "$(hostname -s)" == "coalface" ]]; then
+  machine="boulder"
+fi
+
+if [[ $# -gt 1 ]] || [[ -z "$machine" ]]; then
+  echo >&2 "usage: $0 [machine]"
+  exit 64 # EX_USAGE
+fi
+
+declare -A displays
+
+if [[ "$machine" = "coalface" ]]; then
+  displays[U3421WE]="$INPUT_HDMI_1"
+  displays[U2717D]="$INPUT_HDMI_1"
+  hostname="coalface.local"
+elif [[ "$machine" = "boulder" ]]; then
+  displays[1]="$INPUT_HDMI_2"
+  displays[2]="$INPUT_DISPLAY_PORT_1"
+  hostname="boulder.local"
+else
+  echo >&2 "$0: unknown machine"
+  exit 65 # EX_DATAERR
+fi
+
+if ! which -s lunar && ! which -s ddcctl; then
+  echo >&2 "$0: cannot find lunar or ddcctl"
+  exit 69 # EX_UNAVAILABLE
+fi
+
+if ! ssh-add -l; then
+  ssh-add
+fi
+ssh "$hostname" caffeinate -u -t 1 &
+
+for display in "${!displays[@]}"; do
+  if which -s lunar; then
+    lunar ddc "$display" INPUT_SOURCE "${displays[$display]}"
+  elif which -s ddcctl; then
+    ddcctl -d "$display" -i "${displays[$display]}"
+  fi
+done
+
+pmset displaysleepnow
