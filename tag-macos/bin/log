@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
 
+# @raycast.schemaVersion 1
+# @raycast.title Log
+# @raycast.mode fullOutput
+# @raycast.packageName georgebrock
+#
+# @raycast.icon 🪵
+#
+# Documentation:
+# @raycast.description Start daily work log
+# @raycast.author georgebrock
+# @raycast.authorURL https://georgebrock.com
+
 require "date"
 require "erb"
 
