@@ -17,6 +17,7 @@
   rb = rev-parse --abbrev-ref --symbolic-full-name HEAD@{u}
   sb = !git show-branch $(git cb) $(git rb)
   tig = !tig
+	force = push --force-with-lease
 [mergetool "vimdiff"]
   cmd = vimdiff -f $LOCAL $MERGED $REMOTE
 [merge]
