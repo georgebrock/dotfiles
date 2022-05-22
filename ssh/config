@@ -13,3 +13,13 @@ Host *.dev
 Host yeti yeti.georgebrock.com
     User georgebrock
     Hostname yeti.georgebrock.com
+
+Host pippin pippin.brock.network
+    User pi
+    Hostname pippin.brock.network
+    ForwardAgent yes
+
+Host merry merry.brock.network
+    User pi
+    Hostname merry.brock.network
+    ForwardAgent yes
