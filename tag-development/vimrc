@@ -88,6 +88,7 @@ Plugin 'dense-analysis/ale'
 call vundle#end()
 
 set background=dark
+let g:solarized_termcolors=256
 silent! colorscheme solarized
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
