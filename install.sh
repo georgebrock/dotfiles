@@ -7,7 +7,7 @@ set -x
 
 if [[ "$CODESPACES" = "true" ]]; then
   rm ~/.bashrc
-  sudo apt-get install -y rcm tmux exuberant-ctags
+  sudo apt-get install -y rcm tmux universal-ctags
   rcup -f -v -d . -t linux -t development
 
   if [[ -d /etc/ssh ]]; then
