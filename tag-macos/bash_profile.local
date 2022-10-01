@@ -1,7 +1,7 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="./.git/trust/../../bin:$PATH"
 
-source "$HOME/.asdf/asdf.sh"
+test -f "$HOME/.asdf/asdf.sh" && source "$HOME/.asdf/asdf.sh"
 
 export HOMEBREW_NO_EMOJI="get off my lawn"
 
