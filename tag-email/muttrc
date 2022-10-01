@@ -27,8 +27,8 @@ unignore subject: from: date: to: cc:
 unhdr_order *
 hdr_order subject: from: date: to: cc:
 
-mailboxes +george.brocklehurst-gmail.com/INBOX +thoughtbot/INBOX +georgebrock.com/INBOX
-alternates george\.brocklehurst@gmail\.com george@thoughtbot\.com george@choosyosx\.com george@iconicosx\.com [^@]+@georgebrock\.com
+mailboxes +INBOX
+alternates [^@]+@choosyosx\.com [^@]+@choosy\.app george@iconicosx\.com [^@]+@georgebrock\.com
 
 set date_format = "%Y-%m-%d"
 set index_format = "%4C %Z   %D  %-20.20F  %s"
@@ -36,6 +36,7 @@ set sort = threads
 set sort_aux = reverse-last-date-received
 
 macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail using notmuch"
+bind index g noop
 bind index gg first-entry
 bind index G last-entry
 bind pager G bottom
@@ -80,7 +81,3 @@ unignore List-Unsubscribe:
 source ~/.mutt/config/mutt-colors-solarized-dark-256.muttrc
 source ~/.mutt/config/account.georgebrock
 source ~/.mutt/config/pgp.muttrc
-
-folder-hook george\.brocklehurst-gmail\.com "source ~/.mutt/config/account.gmail"
-folder-hook thoughtbot "source ~/.mutt/config/account.thoughtbot"
-folder-hook georgebrock\.com "source ~/.mutt/config/account.georgebrock"

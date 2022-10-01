@@ -1,0 +1,31 @@
+IMAPAccount ACCT_FASTMAIL
+Host imap.fastmail.com
+User georgebrock@fastmail.com
+UseKeychain yes
+SSLType IMAPS
+SSLVersions TLSv1.2
+AuthMechs LOGIN
+
+IMAPStore STORE_FASTMAIL_REMOTE
+Account ACCT_FASTMAIL
+
+MaildirStore STORE_FASTMAIL_LOCAL
+Path ~/.mail/
+Inbox ~/.mail/INBOX
+
+Channel CHAN_FASTMAIL_INBOX
+Far :STORE_FASTMAIL_REMOTE:
+Near :STORE_FASTMAIL_LOCAL:
+Sync All
+
+Channel CHAN_FASTMAIL_ARCHIVE
+Far :STORE_FASTMAIL_REMOTE:Archive
+Near :STORE_FASTMAIL_LOCAL:archive
+Sync Push
+Remove None
+Expunge None
+MaxMessages 10
+
+Group FASTMAIL
+Channel CHAN_FASTMAIL_INBOX
+Channel CHAN_FASTMAIL_ARCHIVE
