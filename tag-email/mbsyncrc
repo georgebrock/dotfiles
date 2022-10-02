@@ -26,6 +26,15 @@ Remove None
 Expunge None
 MaxMessages 10
 
+Channel CHAN_FASTMAIL_SENT
+Far :STORE_FASTMAIL_REMOTE:Sent
+Near :STORE_FASTMAIL_LOCAL:sent
+Sync Push
+Remove None
+Expunge None
+MaxMessages 10
+
 Group FASTMAIL
 Channel CHAN_FASTMAIL_INBOX
 Channel CHAN_FASTMAIL_ARCHIVE
+Channel CHAN_FASTMAIL_SENT
