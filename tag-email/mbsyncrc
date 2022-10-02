@@ -17,6 +17,7 @@ Channel CHAN_FASTMAIL_INBOX
 Far :STORE_FASTMAIL_REMOTE:
 Near :STORE_FASTMAIL_LOCAL:
 Sync All
+CopyArrivalDate yes
 
 Channel CHAN_FASTMAIL_ARCHIVE
 Far :STORE_FASTMAIL_REMOTE:Archive
@@ -25,6 +26,7 @@ Sync Push
 Remove None
 Expunge None
 MaxMessages 10
+CopyArrivalDate yes
 
 Channel CHAN_FASTMAIL_SENT
 Far :STORE_FASTMAIL_REMOTE:Sent
@@ -33,6 +35,7 @@ Sync Push
 Remove None
 Expunge None
 MaxMessages 10
+CopyArrivalDate yes
 
 Group FASTMAIL
 Channel CHAN_FASTMAIL_INBOX
