@@ -4,4 +4,6 @@ set spoolfile = "+INBOX"
 set postponed = "+drafts"
 set trash = "+archive"
 set record = "+sent"
+set reply_with_xorig = yes
+set reverse_name = yes
 macro index gi "<change-folder>+INBOX<enter>" "go to the INBOX"
