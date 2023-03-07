@@ -176,3 +176,7 @@ function! ToggleBackground()
         set background=light
     endif
 endfunction
+
+for f in split(glob("~/.vim/local/*"), "\n")
+  exe "source" f
+endfor

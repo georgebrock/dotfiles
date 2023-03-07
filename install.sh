@@ -8,7 +8,7 @@ set -x
 if [[ "$CODESPACES" = "true" ]]; then
   rm ~/.bashrc
   sudo apt-get install -y rcm tmux universal-ctags
-  rcup -f -v -d . -t linux -t development
+  rcup -f -v -d . -t linux -t development -t github
 
   if [[ -d /etc/ssh ]]; then
     echo 'AcceptEnv TZ LC_*' >> /etc/ssh/sshd_config
