@@ -66,6 +66,7 @@ set omnifunc=ale#completion#OmniFunc
 set updatetime=500
 
 let g:ale_fixers = {
+\  '*': ['trim_whitespace'],
 \  'javascript': ['prettier'],
 \  'typescript': ['prettier'],
 \}
