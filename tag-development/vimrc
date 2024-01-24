@@ -45,19 +45,35 @@ augroup georgebrock
   autocmd Filetype gitcommit,mail setlocal spell textwidth=76 colorcolumn=77
 augroup END
 
-map! 3 #
-nmap r3 r#
-map! - –
+if has('nvim')
+  map! <M-3> #
+  nmap r<M-3> r#
+  map! <M--> –
 
-noremap 1 :tabnext 1<CR>
-noremap 2 :tabnext 2<CR>
-noremap 3 :tabnext 3<CR>
-noremap 4 :tabnext 4<CR>
-noremap 5 :tabnext 5<CR>
-noremap 6 :tabnext 6<CR>
-noremap 7 :tabnext 7<CR>
-noremap 8 :tabnext 8<CR>
-noremap 9 :tablast<CR>
+  noremap <M-1> :tabnext 1<CR>
+  noremap <M-2> :tabnext 2<CR>
+  noremap <M-3> :tabnext 3<CR>
+  noremap <M-4> :tabnext 4<CR>
+  noremap <M-5> :tabnext 5<CR>
+  noremap <M-6> :tabnext 6<CR>
+  noremap <M-7> :tabnext 7<CR>
+  noremap <M-8> :tabnext 8<CR>
+  noremap <M-9> :tablast<CR>
+else
+  map! 3 #
+  nmap r3 r#
+  map! - –
+
+  noremap 1 :tabnext 1<CR>
+  noremap 2 :tabnext 2<CR>
+  noremap 3 :tabnext 3<CR>
+  noremap 4 :tabnext 4<CR>
+  noremap 5 :tabnext 5<CR>
+  noremap 6 :tabnext 6<CR>
+  noremap 7 :tabnext 7<CR>
+  noremap 8 :tabnext 8<CR>
+  noremap 9 :tablast<CR>
+endif
 
 noremap <C-j> :ALENext<CR>
 noremap <C-k> :ALEPrevious<CR>
