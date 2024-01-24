@@ -16,10 +16,11 @@ require "date"
 require "erb"
 
 START_WEEK = Date.new(2021, 6, 14)
+TODAY = Date.today
 
 markdown = ERB.new(DATA.read).result_with_hash(
-  week_no: ((Date.today - START_WEEK) / 7).to_i,
-  day_no: Date.today.wday,
+  week_no: ((TODAY - START_WEEK) / 7).to_i,
+  day_no: TODAY.wday,
 )
 
 system("dayone2", "new", "-j", "Work Log", markdown)
@@ -29,14 +30,14 @@ __END__
 # Week <%= week_no %>, day <%= day_no %>
 
 - ⏰ Morning routine
+  - [ ] 📊 Check in on SLOs
+  - [ ] 📝 Update the plan
+  - [ ] 🚨Urgent morning tasks from yesterday
   - [ ] 💬 Read Slack
   - [ ] 📆 Check calendar
   - [ ] 📥 Process inbox
-  - [ ] 🪲  Check in on flaky tests
-  - [ ] 📝 Update the plan
-  - [ ] 👓 Post to Geekbot
-  - 🕰 Total time: ...
-- ...
+  - 🕰 Total time: …
+- …
 
 ---
 
