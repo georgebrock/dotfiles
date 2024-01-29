@@ -1,0 +1,22 @@
+#!/bin/sh
+
+codespace="$1"
+
+if ! ssh-add -l 2>&1 > /dev/null; then
+  echo >&2 "$(basename "$0"): need to add private keys to the SSH agent"
+  ssh-add
+fi
+
+if [[ $EUID -ne 0 ]]; then
+  echo >&2 "$(basename "$0"): must run as root to forward port 80, re-running with sudo"
+  exec sudo /bin/sh "$0" "$@"
+fi
+
+gh cs ports forward 80:80 3012:3012 -c "$codespace" &
+pid=$!
+
+sleep 5
+gh cs ssh -c "$codespace"
+
+kill -s TERM "$pid"
+echo "Done."
