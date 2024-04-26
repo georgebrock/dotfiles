@@ -18,9 +18,41 @@ require "erb"
 START_WEEK = Date.new(2021, 6, 14)
 TODAY = Date.today
 
+class RoutineTask
+  def initialize(title, only: [])
+    only.each do |day_name|
+      unless Date::DAYNAMES.include?(day_name)
+        raise ArgumentError, "Invalid day name: #{day_name.inspect}"
+      end
+    end
+
+    @title = title
+    @only = only
+  end
+
+  def appropriate?(date)
+    @only.empty? || @only.include?(Date::DAYNAMES[date.wday])
+  end
+
+  def to_s
+    @title
+  end
+end
+
+TASKS = [
+  RoutineTask.new("📆 Check calendar"),
+  RoutineTask.new("📝 Review OmniFocus projects", only: ["Monday"]),
+  RoutineTask.new("⛳️ Flag important OmniFocus tasks for the day"),
+  RoutineTask.new("💬 Share plan for the week with @danhodos & @jen-k", only: ["Monday"]),
+  RoutineTask.new("📊 Check in on SLOs"),
+  RoutineTask.new("💬 Read Slack"),
+  RoutineTask.new("📥 Process inbox"),
+]
+
 markdown = ERB.new(DATA.read).result_with_hash(
   week_no: ((TODAY - START_WEEK) / 7).to_i,
   day_no: TODAY.wday,
+  tasks: TASKS.select { |t| t.appropriate?(TODAY) },
 )
 
 system("dayone2", "new", "-j", "Work Log", markdown)
@@ -30,15 +62,7 @@ __END__
 # Week <%= week_no %>, day <%= day_no %>
 
 - ⏰ Morning routine
-  - [ ] 📊 Check in on SLOs
-  - [ ] 📝 Update the plan
-  - [ ] 🚨Urgent morning tasks from yesterday
-  - [ ] 💬 Read Slack
-  - [ ] 📆 Check calendar
-  - [ ] 📥 Process inbox
+<% tasks.each do |task| %>
+  - [ ] <%= task %><% end %>
   - 🕰 Total time: …
 - …
-
----
-
-## The Plan
