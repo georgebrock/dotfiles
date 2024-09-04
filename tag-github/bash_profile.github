@@ -1,1 +1,2 @@
 export SRB_SKIP_GEM_RBIS=1
+export PATH="/workspaces/github/bin:$PATH"
