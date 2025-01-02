@@ -30,6 +30,6 @@ fi
 vim +PluginInstall +qa
 
 if [[ "$CODESPACES" = "true" ]]; then
-  # Default to HTTPS for GitHub access
   git config --global url.https://github.com/.insteadOf git@github.com:
+  git config --global gpg.program /.codespaces/bin/gh-gpgsign
 fi
