@@ -9,3 +9,4 @@ bin/stubs
 .bundle
 .vagrant
 Session.vim
+.nvimlog
