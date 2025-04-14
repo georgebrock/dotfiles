@@ -3,6 +3,8 @@
   email = george@georgebrock.com
 [core]
   excludesfile = ~/.gitignore
+[commit]
+  verbose = true
 [push]
   default = current
 [rebase]
