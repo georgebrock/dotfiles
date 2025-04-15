@@ -44,8 +44,7 @@ bind index \Cf next-page
 bind index \Cb previous-page
 bind pager \Cf next-page
 bind pager \Cb previous-page
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap for the inbox"
-macro index O "<shell-escape>offlineimap -q<enter>" "run offlineimap for all folders"
+macro index o "<shell-escape>sync-email<enter>" "sync local mail with server"
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
 set pager_index_lines = 10
