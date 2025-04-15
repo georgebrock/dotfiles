@@ -1,4 +1,3 @@
-IdentityFile /Users/georgebrock/.ssh/id_ed25519
 SendEnv TZ LC_*
 Include config.*
 
