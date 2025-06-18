@@ -99,7 +99,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'nono/vim-handlebars'
 Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-obsession'
@@ -107,8 +106,7 @@ Plugin 'dense-analysis/ale'
 call vundle#end()
 
 set background=dark
-let g:solarized_termcolors=256
-silent! colorscheme solarized
+silent! colorscheme retrobox
 
 map <leader>g :silent !gitsh<CR>:redraw!<CR>
 map <leader>t :call ExecuteInShell("clear; ".TestCmd())<CR>
