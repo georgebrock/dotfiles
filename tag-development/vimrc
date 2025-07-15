@@ -164,13 +164,16 @@ function! TestCmd()
         return "nosetests ".l:file
     elseif (match(l:file, ".exs") != -1)
         return "mix test ".l:file
+    elseif (match(l:file, ".stories.tsx") != -1)
+        return "./bin/npm run storybook:test -- ".l:file
     elseif (match(l:file, ".ts") != -1)
-        let l:match = matchstrlist([l:file], '\(.\+/\)\?\(ui/packages/[^/]\+\)', #{submatches: v:true})
+        let l:match = matchstrlist([l:file], '\(.\+/\)\?\(ui/packages/[^/]\+\)/\(.\+\)', #{submatches: v:true})
         if len(l:match) != 1
             return "./bin/npm test ".l:file
         else
             let l:package = l:match[0].submatches[1]
-            return "./bin/npm test -w ".l:package." ".l:file
+            let l:rel_path = l:match[0].submatches[2]
+            return "./bin/npm test -w ".l:package." ".l:rel_path
         endif
     endif
 endfunction
