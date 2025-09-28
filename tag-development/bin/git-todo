@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+base=${1:-origin/HEAD}
+
+git diff "$base" | grep -E '^\+(\+\+|.*\bTODO\b)' | grep -B1 '^\+[^+]' | awk '
+/^\+\+\+/ { sub(/^b\//, "", $2); print $2; next }
+/^--/     { print ""; next }
+          { sub(/^.*TODO(: *)?/, "- ", $0); print $0 }
+'
