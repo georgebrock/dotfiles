@@ -12,11 +12,14 @@ if [[ $EUID -ne 0 ]]; then
   exec sudo /bin/sh "$0" "$@"
 fi
 
-gh cs ports forward 80:80 3012:3012 -c "$codespace" &
-pid=$!
+gh cs ports forward 80:80 3012:3012 2206:2206 -c "$codespace" &
+pid1=$!
+gh cs ports forward 6006:6006 3035:3035 -c "$codespace" &
+pid2=$!
 
 sleep 5
 gh cs ssh -c "$codespace"
 
-kill -s TERM "$pid"
+kill -s TERM "$pid1"
+kill -s TERM "$pid2"
 echo "Done."
