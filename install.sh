@@ -32,8 +32,10 @@ vim +PluginInstall +qa
 if [[ "$CODESPACES" = "true" ]]; then
   # Vundle's pinned Git version support is broken, so work around it with
   # this hack.
-  git --git-dir "$HOME/.vim/bundle/ale/.git" fetch --tags
-  git --git-dir "$HOME/.vim/bundle/ale/.git" checkout v4.0.0
+  pushd "$HOME/.vim/bundle/ale"
+  git fetch --tags
+  git checkout v4.0.0
+  popd
 
   git config --global url.https://github.com/.insteadOf git@github.com:
   git config --global gpg.program /.codespaces/bin/gh-gpgsign
